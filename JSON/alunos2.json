@@ -1,0 +1,17 @@
+{
+    "Matemática": [
+        "João", "Maria", "Pedro"
+    ],
+    "Português": [
+        "Fulano", "Beltrano", "Ciclano"
+    ],
+    "História": [
+        "Ana", "Carlos", "Paulo"
+    ],
+    "Geografia": [
+        "Bruna", "Lucas", "Gabriel"
+    ],
+    "Ciências": [
+        "Rita", "Marta", "José"
+    ]
+}

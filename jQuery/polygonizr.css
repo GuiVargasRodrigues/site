@@ -1,0 +1,15 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0000FF; /* Tela azul */
+}
+
+#polygonizr {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
