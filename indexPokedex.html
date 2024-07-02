@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="./imagespokemon/favicon-16x16.png">
+  <link rel="stylesheet" href="./csspokemon/style.css">
+
+ 
+  <script defer src="./js/script.js"></script>
+
+  <title>Pokédex</title>
+</head>
+<body>
+
+  <main>
+    <div class="pokedex-container">
+      <img src="./imagespokemon/pokedex.png" alt="pokedex" class="pokedex">
+      <div class="pokemon-display">
+        <img src="#" alt="pokemon" class="pokemon__image">
+        <h1 class="pokemon__data">
+          <span class="pokemon__number"></span> -
+          <span class="pokemon__name"></span>
+        </h1>
+        <p class="pokemon__info">
+          Type: <span class="pokemon__type"></span><br>
+          Height: <span class="pokemon__height"></span>m<br>
+          Weight: <span class="pokemon__weight"></span>kg
+        </p>
+      </div>
+    </div>
+
+
+      <input
+        type="search"
+        class="input__search"
+        placeholder="Name or Number"
+        required
+      />
+    
+
+    <div class="buttons">
+      <button class="button btn-prev">Prev &lt;</button>
+      <button class="button btn-search">Search </button>
+      <button class="button btn-next">Next &gt;</button>
+    </div>
+  </main>
+
+  <!-- musica de fundo-->
+  <audio id="background-music" src="sounds/1-01. Opening.mp3" autoplay  ></audio>
+
+
+</body>
+</html>
