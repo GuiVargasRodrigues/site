@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome com ng-init e ng-bind</title>
+    <!-- Link para o AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <!-- Div com a diretiva ng-app -->
+    <div ng-app>
+        <!-- Definindo o valor da variável 'nome' com ng-init -->
+        <div ng-init="nome='João'">
+            <!-- Exibindo o valor da variável 'nome' com ng-bind -->
+            <h1>Olá, <span ng-bind="nome"></span></h1>
+        </div>
+    </div>
+</body>
+</html>

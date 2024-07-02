@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada de Texto com AngularJS</title>
+    <!-- Link para o AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <!-- Div com a diretiva ng-app -->
+    <div ng-app>
+        <!-- Input de texto com a diretiva ng-model="name" -->
+        <input type="text" ng-model="name" placeholder="Digite seu nome">
+
+        <!-- Título que mostra o valor de name -->
+        <h1>Olá {{name}}</h1>
+    </div>
+</body>
+</html>
