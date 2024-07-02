@@ -31,7 +31,7 @@ function preload() {
     this.load.image('background', 'https://labs.phaser.io/assets/skies/space3.png');
     this.load.image('ship', 'https://labs.phaser.io/assets/sprites/player.png');
     this.load.image('bullet', 'https://labs.phaser.io/assets/sprites/bullets/bullet6.png');
-    this.load.image('enemy', 'https://labs.phaser.io/assets/sprites/space-baddie.png');  // URL corrigida
+    this.load.image('enemy', 'https://labs.phaser.io/assets/sprites/space-baddie.png');
 }
 
 function create() {
@@ -39,7 +39,7 @@ function create() {
     this.add.tileSprite(400, 300, 800, 600, 'background');
 
     // Add player
-    player = this.physics.add.sprite(400, 500, 'ship').setScale(0.75);  // Aumenta o tamanho da nave
+    player = this.physics.add.sprite(400, 500, 'ship').setScale(0.75);
     player.setCollideWorldBounds(true);
 
     // Player controls
