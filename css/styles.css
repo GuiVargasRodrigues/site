@@ -64,7 +64,17 @@ article {
 .btn:hover {
     background-color: #006bb3;
 }
-
+/* Botão de volta para a página inicial */
+.back-home {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
 /* Media Queries para responsividade */
 @media (max-width: 768px) {
     .content {
