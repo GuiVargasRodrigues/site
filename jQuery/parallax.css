@@ -24,11 +24,11 @@ body, html {
 }
 
 #parallax1:before {
-    background-image: url('./imagens/flor.jpeg');
+    background-image: url('../jQuery/imagens/flor.jpeg');
 }
 
 #parallax2:before {
-    background-image: url('./imagens/flor2.png');
+    background-image: url('../jQuery/imagens/flor2.png');
 }
 
 .content {
