@@ -10,14 +10,23 @@
 </head>
 <body>
   <main>
+    <!-- Container principal da Pokédex -->
     <div class="pokedex-container">
+      <!-- Imagem da Pokédex -->
       <img src="./images/pokedex.png" alt="pokedex" class="pokedex">
+
+      <!-- Display das informações do Pokémon -->
       <div class="pokemon-display">
+        <!-- Imagem do Pokémon -->
         <img src="#" alt="pokemon" class="pokemon__image">
+        
+        <!-- Dados principais do Pokémon (número e nome) -->
         <h1 class="pokemon__data">
           <span class="pokemon__number"></span> -
           <span class="pokemon__name"></span>
         </h1>
+
+        <!-- Informações adicionais do Pokémon (tipo, altura, peso) -->
         <p class="pokemon__info">
           Type: <span class="pokemon__type"></span><br>
           Height: <span class="pokemon__height"></span>m<br>
@@ -25,16 +34,22 @@
         </p>
       </div>
     </div>
+
+    <!-- Campo de pesquisa para buscar Pokémon por nome ou número -->
     <input type="search" class="input__search" placeholder="Name or Number" required />
+
+    <!-- Botões de navegação (anterior, buscar, próximo) -->
     <div class="buttons">
       <button class="button btn-prev">Prev &lt;</button>
       <button class="button btn-search">Search</button>
       <button class="button btn-next">Next &gt;</button>
     </div>
   </main>
-  <!-- musica de fundo-->
+
+  <!-- Música de fundo -->
   <audio id="background-music" src="sounds/1-01. Opening.mp3" autoplay loop></audio>
-  <!-- som do pokemon-->
+  
+  <!-- Som do Pokémon -->
   <audio id="pokemon-sound"></audio>
 </body>
 </html>
