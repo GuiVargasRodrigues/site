@@ -10,69 +10,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.querySelector('.btn-next');
     const pokemonSound = document.getElementById('pokemon-sound');
     const backgroundMusic = document.getElementById('background-music');
-
     const btnSearch = document.querySelector('.btn-search');
-
+    
     let currentPokemonId = 1;
 
-    // dimimui volume da musica para 10%
-    backgroundMusic.volume = 0.1; // Set volume to 10%
+    // Diminuir volume da música de fundo para 5%
+    backgroundMusic.volume = 0.05;
 
     const fetchPokemon = async (idOrName) => {
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${idOrName}`);
-            
             if (!response.ok) {
                 throw new Error('Pokémon not found');
             }
             const pokemon = await response.json();
-
-            console.log(pokemon)
             updatePokemonInfo(pokemon);
-            /* */
         } catch (error) {
             console.error('Error fetching Pokémon data:', error);
-            if (idOrName.trim()) {
-                
-            }
         }
     };
 
     const updatePokemonInfo = (pokemon) => {
         pokemonImage.src = pokemon.sprites.front_default;
         pokemonNumber.textContent = pokemon.id;
-
         pokemonName.textContent = `${pokemon.forms[0].name}`;
-        
-        console.log(pokemon.forms[0].name)
-        
-        
         pokemonType.textContent = pokemon.types.map(typeInfo => typeInfo.type.name).join(', ');
         pokemonHeight.textContent = (pokemon.height / 10).toFixed(1); // Converter para metros
         pokemonWeight.textContent = (pokemon.weight / 10).toFixed(1); // Converter para kg
+
         playPokemonSound(pokemon.id);
     };
 
     const playPokemonSound = (id) => {
-        const soundFile = `sounds/cries_pokemon_${id}_latest.ogg`;
-        pokemonSound.src = soundFile;
-        pokemonSound.play();
-    };
-
-    pokemonImage.addEventListener('click', () => {
-        const soundFile = pokemonSound.src;
-        if (soundFile) {
-            pokemonSound.play();
+        // Parar qualquer som do Pokémon que esteja tocando
+        if (!pokemonSound.paused) {
+            pokemonSound.pause();
+            pokemonSound.currentTime = 0;
         }
-    });
+        // Pausar a música de fundo
+        backgroundMusic.pause();
+
+        const soundFile = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`;
+        pokemonSound.src = soundFile;
+        pokemonSound.volume = 1.0; // Aumentar volume do som do Pokémon para 100%
+        pokemonSound.play();
+
+        // Retomar a música de fundo após o término do som do Pokémon
+        pokemonSound.onended = () => {
+            backgroundMusic.play();
+        };
+    };
 
     searchInput.addEventListener('search', () => {
         const idOrName = searchInput.value.toLowerCase().trim();
-        if (idOrName > 1) {
-            currentPokemonId -= idOrName;
-            fetchPokemon(currentPokemonId);
-            
-        }
+        fetchPokemon(idOrName);
     });
 
     prevButton.addEventListener('click', () => {
@@ -90,15 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchPokemon(currentPokemonId);
 
     btnSearch.addEventListener('click', () => {
-
-        const searchInput = document.querySelector('.input__search').value;
-        fetchPokemon(searchInput);
-
-        const sound = document.getElementById('background-music'); 
-        sound.src = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${searchInput}.ogg`; 
-    })
+        const searchInputValue = searchInput.value.toLowerCase().trim();
+        fetchPokemon(searchInputValue);
+    });
 });
-
-
-
-     
