@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alunos por Curso</title>
+    <!-- facilita operações com JavaScript -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
     <style>
+        /* Estilos para a tabela */
         table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: collapse; 
         }
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid black; 
         }
         th, td {
-            padding: 8px;
-            text-align: left;
+            padding: 8px; 
+            text-align: left; 
         }
     </style>
 </head>
 <body>
     <h1>Alunos por Curso</h1>
+
     <button id="loadButton">Carregar Alunos</button>
+    <!-- Botão que, aciona a função que carrega os dados dos alunos -->
+
     <div id="tableContainer"></div>
 
     <script src="script2.js"></script>
+    <!--  arquivo JavaScript que  carregar e exibe os dados dos alunos -->
 </body>
 </html>
